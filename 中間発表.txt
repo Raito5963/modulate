@@ -1,0 +1,31 @@
+
+
+The first speaker is Mr. Raito Mochizuki from Shizuoka Prefectural Science and Technology High School. Mr. Mochizuki, are you ready? Yes, I'm ready. Let's start the lecture.
+
+I'm Mochizuki. I'm a keyboard modulator. I started typing when I was in junior high school.
+
+As I was typing, my hands and fingers started to hurt. The pain increased every day. When I became a high school student, I felt pain that made it difficult to move my hands when I was in a bad situation.
+
+When I looked up solutions, I found that there were many people around the world who had the same pain as me. So I decided to work on this modulator. As a result of interviewing and analyzing people around the world, one person in two people had pain in his fingers, wrists, and arms while typing.
+
+I think some of you are typing now, but don't your wrists bend like the image? It's because of the pain. Also, one in eight people says that the work efficiency is bad. For example, some people say that the keyboard and mouse movement of the arm or the arrangement of the keys is very inefficient.
+
+Also, as a improvement to the keyboard, there are human science keyboards, ergonomics keyboards, and division keyboards. However, they are too big, the priority is mainstream, and you have to carry a code. Comfortability and portability are incompatible.
+
+Also, I was able to get a lot of responses on Reddit, an overseas bulletin board where I posted various things. Among them, there is a disease similar to RSI or CTS, but there are a lot of people studying it. I found that this problem is serious.
+
+Among them, programmers are at risk. Most of the programmers are typing for a long time every day, and there is a high rate of RSI or CTS. Also, programmers know that there are many people who buy gadgets that are highly customizable for their own efficiency and health, or gadgets based on human science.
+
+And as a solution to the problem, to reduce the pain in the fingers and wrists, the ergonomics and emphasis on the design of the split-type tiles vertically as shown in the image. Also, as you can see in the center of the screen, you can change the module you like according to your working form, modularize the efficiency of the work, and since it is very troublesome to carry the code, I adopted Bluetooth and made it wireless. And why do I do it now? There are more and more people around the world who feel the same pain as I do.
+
+In addition, the number of programmers has increased so much that I have never seen an AI prompt input, programming, chat tools, etc. And from this, remote work and hybrid work, because the need to work in the same environment everywhere is also increasing, it is necessary to modulate now. And the market share is like this, and growth is expected throughout the keyboard market.
+
+And the current progress, here is a replica of the board, the design of the board is already completed, and now we are creating a case. And tomorrow, I can't say the name, but I got a reply from a professor of Tokyo University, so we are going to have a detailed discussion tomorrow. And the development members, until September, there were no members with me.
+
+However, when I applied in the community, students from the United States and France cooperated, and now we are working globally. Everyone has knowledge of the keyboard, and the recovery is very smooth. And as a roadmap, this month, in November, we plan to complete the prototype and conduct user tests, and then connect it to crowdfunding.
+
+In the future, it is a basic concept, but using AI, we will analyze the input data, the size of the fingers and hands, and develop a personalized keyboard for each person. And in a new module, other than programmers, such as designers and programmers. And diseases such as RSI and CTS are expected to increase in the future.
+
+Therefore, instead of a secondary preventive device, we would like to evolve as a temporary preventive device for the future. Finally, the keyboard is a very important device when it comes to input. Let's review the keyboard from the perspective of health and efficiency.
+
+This was Modulate. Thank you.
