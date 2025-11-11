@@ -37,14 +37,12 @@ export default function FeaturesSection({ dict }: { dict: Dictionary }) {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="mb-12 sm:mb-16 md:mb-20 mx-auto max-w-5xl"
         >
-          <div className="aspect-video bg-gradient-to-br from-teal-900/30 to-emerald-900/30 dark:from-teal-900/30 dark:to-emerald-900/30 light:bg-teal-50 rounded-xl sm:rounded-2xl flex items-center justify-center border border-teal-500/20 dark:border-teal-500/20 light:border-teal-300/40">
-            {/* Placeholder for features showcase
-                Recommended: 1400x788px, keyboard with RGB lighting/features highlighted */}
-            <div className="text-center text-gray-500 dark:text-gray-500 light:text-black px-4">
-              <p className="text-xs sm:text-sm">Features Showcase Image</p>
-              <p className="text-xs hidden sm:block">1400x788px</p>
-              <p className="text-xs hidden md:block">Keyboard with RGB/customization features</p>
-            </div>
+          <div className="aspect-video rounded-xl sm:rounded-2xl overflow-hidden border border-teal-500/20 dark:border-teal-500/20 bg-gray-100 dark:bg-gray-800">
+            <img 
+              src="/images/features.jpg" 
+              alt="Modulate keyboard features" 
+              className="w-full h-full object-cover"
+            />
           </div>
         </motion.div>
 

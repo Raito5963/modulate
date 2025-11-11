@@ -37,13 +37,14 @@ export default function SolutionSection({ dict }: { dict: Dictionary }) {
                 index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'
               } gap-8 sm:gap-10 lg:gap-12 items-center`}
             >
-              {/* Image placeholder */}
+              {/* Image */}
               <div className="flex-1 w-full">
-                <div className="aspect-[4/3] bg-gradient-to-br from-emerald-900/30 to-teal-900/30 dark:from-emerald-900/30 dark:to-teal-900/30 light:bg-emerald-50 rounded-xl sm:rounded-2xl flex items-center justify-center border border-emerald-500/20 dark:border-emerald-500/20 light:border-emerald-300/40">
-                  <div className="text-center text-gray-500 dark:text-gray-500 light:text-black px-4">
-                    <p className="text-xs sm:text-sm">{feature.imagePlaceholder}</p>
-                    <p className="text-xs hidden sm:block">800x600px</p>
-                  </div>
+                <div className="aspect-[4/3] rounded-xl sm:rounded-2xl overflow-hidden border border-emerald-500/20 dark:border-emerald-500/20 bg-gray-100 dark:bg-gray-800">
+                  <img 
+                    src={`/images/${index === 0 ? 'ergonomics.jpg' : index === 1 ? 'module.jpg' : 'wireless.png'}`}
+                    alt={feature.title}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
 

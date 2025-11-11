@@ -26,32 +26,13 @@ export default function SpecsSection({ dict }: { dict: Dictionary }) {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
-          {/* Specs image */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="order-2 lg:order-1"
-          >
-            <div className="aspect-square bg-gradient-to-br from-cyan-900/30 to-blue-900/30 dark:from-cyan-900/30 dark:to-blue-900/30 light:bg-cyan-50 rounded-xl sm:rounded-2xl flex items-center justify-center border border-cyan-500/20 dark:border-cyan-500/20 light:border-cyan-300/40">
-              {/* Placeholder for technical specs visualization
-                  Recommended: 800x800px, exploded view or technical diagram */}
-              <div className="text-center text-gray-500 dark:text-gray-500 light:text-black px-4">
-                <p className="text-xs sm:text-sm">Technical Specs Image</p>
-                <p className="text-xs hidden sm:block">800x800px</p>
-                <p className="text-xs">Exploded view / Technical diagram</p>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Specs list */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="space-y-4 sm:space-y-6 order-1 lg:order-2"
-          >
+        {/* Specs list */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="space-y-4 sm:space-y-6 max-w-3xl mx-auto"
+        >
             {dict.specs.items.map((spec, index) => (
               <motion.div
                 key={index}
@@ -64,8 +45,7 @@ export default function SpecsSection({ dict }: { dict: Dictionary }) {
                 <div className="text-base sm:text-lg md:text-xl font-semibold">{spec.value}</div>
               </motion.div>
             ))}
-          </motion.div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

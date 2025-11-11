@@ -39,15 +39,24 @@ export default function TeamSection({ dict }: { dict: Dictionary }) {
               transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
               className="text-center"
             >
-              {/* Member photo placeholder */}
-              <div className="aspect-square bg-gradient-to-br from-emerald-900/30 to-teal-900/30 dark:from-emerald-900/30 dark:to-teal-900/30 light:bg-emerald-50 rounded-xl sm:rounded-2xl flex items-center justify-center border border-emerald-500/20 dark:border-emerald-500/20 light:border-emerald-300/40 mb-4 sm:mb-6">
-                {/* Placeholder for member photo
-                    Recommended: 400x400px, professional portrait */}
-                <div className="text-center text-gray-500 dark:text-gray-500 light:text-black px-4">
-                  <p className="text-xs sm:text-sm">Member Photo</p>
-                  <p className="text-xs hidden sm:block">400x400px</p>
-                  <p className="text-xs">{member.name}</p>
-                </div>
+              {/* Member photo */}
+              <div className="aspect-square rounded-xl sm:rounded-2xl overflow-hidden border border-emerald-500/20 dark:border-emerald-500/20 mb-4 sm:mb-6 bg-gray-100 dark:bg-gray-800">
+                {index === 0 && (
+                  <img 
+                    src="/images/raito.jpg" 
+                    alt={member.name}
+                    className="w-full h-full object-cover"
+                  />
+                )}
+                {index !== 0 && (
+                  <div className="w-full h-full bg-gradient-to-br from-emerald-900/30 to-teal-900/30 dark:from-emerald-900/30 dark:to-teal-900/30 flex items-center justify-center">
+                    <div className="text-center text-gray-500 dark:text-gray-500 px-4">
+                      <p className="text-xs sm:text-sm">Member Photo</p>
+                      <p className="text-xs hidden sm:block">400x400px</p>
+                      <p className="text-xs">{member.name}</p>
+                    </div>
+                  </div>
+                )}
               </div>
               
               {/* Member info */}

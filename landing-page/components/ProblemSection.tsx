@@ -26,21 +26,19 @@ export default function ProblemSection({ dict }: { dict: Dictionary }) {
           </p>
         </motion.div>
 
-        {/* Problem illustration placeholder */}
+        {/* Problem illustration */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={isInView ? { opacity: 1, scale: 1 } : {}}
           transition={{ duration: 0.8, delay: 0.2 }}
           className="mb-12 sm:mb-16 md:mb-20 mx-auto max-w-4xl"
         >
-          <div className="aspect-video bg-gradient-to-br from-red-900/30 to-orange-900/30 dark:from-red-900/30 dark:to-orange-900/30 light:bg-red-50 rounded-xl sm:rounded-2xl flex items-center justify-center border border-red-500/20 dark:border-red-500/20 light:border-red-300/40">
-            {/* Placeholder for problem illustration
-                Recommended: 1200x675px, showing wrist pain/poor posture */}
-            <div className="text-center text-gray-500 dark:text-gray-500 light:text-black px-4">
-              <p className="text-xs sm:text-sm">Problem Illustration Image</p>
-              <p className="text-xs hidden sm:block">1200x675px</p>
-              <p className="text-xs">Wrist pain / Poor typing posture</p>
-            </div>
+          <div className="aspect-video rounded-xl sm:rounded-2xl overflow-hidden border border-red-500/20 dark:border-red-500/20">
+            <img 
+              src="/images/wristpain.jpg" 
+              alt="Wrist pain from poor typing posture" 
+              className="w-full h-full object-cover"
+            />
           </div>
         </motion.div>
 

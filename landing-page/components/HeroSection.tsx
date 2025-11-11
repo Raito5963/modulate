@@ -7,17 +7,14 @@ import { Dictionary } from '@/lib/dictionaries';
 export default function HeroSection({ dict }: { dict: Dictionary }) {
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* Background placeholder for hero image */}
+      {/* Background hero image */}
       <div className="absolute inset-0 z-0 bg-white dark:bg-black">
-        {/* Placeholder for hero background image
-            Recommended: 1920x1080px, full-screen keyboard lifestyle shot */}
-        <div className="absolute inset-0 flex items-center justify-center opacity-20">
-          <div className="text-center text-gray-400">
-            <p className="text-sm">Hero Background Image</p>
-            <p className="text-xs">1920x1080px</p>
-            <p className="text-xs">Keyboard lifestyle/product shot</p>
-          </div>
-        </div>
+        <img 
+          src="/images/hero.jpg" 
+          alt="Modulate Keyboard" 
+          className="w-full h-full object-cover opacity-50 dark:opacity-30"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-white/80 via-white/40 to-transparent dark:from-black/80 dark:via-black/40 dark:to-transparent" />
       </div>
 
       {/* Content */}
