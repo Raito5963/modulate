@@ -1,17 +1,7 @@
 'use client';
 
 import { ThemeProvider } from "@/contexts/ThemeContext";
-import LanguageSwitcher from '@/components/LanguageSwitcher';
-import ThemeSwitcher from '@/components/ThemeSwitcher';
-
-function Switchers({ currentLang }: { currentLang: string }) {
-  return (
-    <>
-      <LanguageSwitcher currentLang={currentLang} />
-      <ThemeSwitcher />
-    </>
-  );
-}
+import Header from '@/components/Header';
 
 export default function RootLayoutClient({
   children,
@@ -22,8 +12,10 @@ export default function RootLayoutClient({
 }) {
   return (
     <ThemeProvider>
-      <Switchers currentLang={currentLang} />
-      {children}
+      <Header currentLang={currentLang} />
+      <div className="pt-24">
+        {children}
+      </div>
     </ThemeProvider>
   );
 }
