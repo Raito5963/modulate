@@ -5,10 +5,197 @@ import RootLayoutClient from "./RootLayoutClient";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
-  title: "Modulate - Ergonomic Modular Keyboard",
-  description: "Experience the future of typing with our customizable modular keyboard",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}): Promise<Metadata> {
+  const { lang } = await params;
+  const isJapanese = lang === 'ja';
+
+  return {
+    title: isJapanese
+      ? "Modulate（モジュレート）| エルゴノミクス分割キーボード | TOMOLプロジェクト"
+      : "Modulate | Ergonomic Split Keyboard | TOMOL Project",
+    description: isJapanese
+      ? "Modulate（モジュレート）は人間工学に基づいた次世代の分割キーボード。モジュール式設計で自作キーボード愛好家やキーボード沼の方にも最適。エルゴノミクス・ガジェット・スタートアップのTOMOLプロジェクトが開発"
+      : "Modulate is a next-generation split keyboard based on ergonomics. Perfect for custom keyboard enthusiasts with modular design. Developed by TOMOL Project, a startup combining ergonomics and gadget technology",
+    keywords: [
+    // ブランド・プロジェクト名
+    "Modulate",
+    "モジュレート",
+    "TOMOLプロジェクト",
+    "TOMOL",
+    "TOMOL Project",
+    "トモルプロジェクト",
+    
+    // 基本キーワード
+    "キーボード",
+    "分割キーボード",
+    "スプリットキーボード",
+    "左右分離キーボード",
+    "セパレートキーボード",
+    
+    // エルゴノミクス関連
+    "エルゴノミクス",
+    "エルゴノミクスキーボード",
+    "人間工学",
+    "人間工学キーボード",
+    "ergonomics",
+    "ergonomic keyboard",
+    "肩こり解消",
+    "手首の痛み",
+    "腱鞘炎",
+    "RSI",
+    "反復性ストレス障害",
+    "CTS",
+    "手根管症候群",
+    "姿勢改善",
+    "健康キーボード",
+    
+    // モジュール関連
+    "モジュール",
+    "モジュラー",
+    "モジュラーキーボード",
+    "modular keyboard",
+    "カスタマイズ",
+    "カスタマイズ可能",
+    "拡張性",
+    
+    // 自作キーボード関連
+    "自作キーボード",
+    "自作キーボードキット",
+    "DIYキーボード",
+    "キーボード自作",
+    "キーボード沼",
+    "メカニカルキーボード",
+    "mechanical keyboard",
+    "ホットスワップ",
+    "hot swap",
+    "キースイッチ",
+    "Cherry MX",
+    "キーキャップ",
+    "keycaps",
+    
+    // テクノロジー・機能
+    "ワイヤレスキーボード",
+    "Bluetoothキーボード",
+    "Bluetooth keyboard",
+    "無線キーボード",
+    "コードレスキーボード",
+    "USB-C",
+    "バッテリー駆動",
+    "マルチデバイス",
+    "複数デバイス対応",
+    
+    // ターゲットユーザー
+    "プログラマー",
+    "プログラマー向け",
+    "エンジニア向け",
+    "開発者向け",
+    "デザイナー向け",
+    "ライター向け",
+    "クリエイター向け",
+    "リモートワーク",
+    "在宅勤務",
+    "テレワーク",
+    
+    // ガジェット・製品カテゴリ
+    "ガジェット",
+    "PCガジェット",
+    "デスクガジェット",
+    "テックガジェット",
+    "最新ガジェット",
+    "便利グッズ",
+    "PC周辺機器",
+    "入力デバイス",
+    
+    // スタートアップ・ビジネス
+    "スタートアップ",
+    "日本スタートアップ",
+    "学生起業",
+    "クラウドファンディング",
+    "先行予約",
+    "予約販売",
+    "新製品",
+    
+    // 比較・競合
+    "ErgoDox",
+    "Kinesis",
+    "Moonlander",
+    "Corne",
+    "Lily58",
+    "split keyboard japan",
+    "日本製キーボード",
+    
+    // 英語キーワード
+    "Ergonomic keyboard",
+    "Split keyboard",
+    "Modular keyboard",
+    "Custom keyboard",
+    "Mechanical keyboard",
+    "Programmable keyboard",
+    "Ortholinear keyboard",
+    "Columnar stagger",
+    "Vertical split",
+    "Tenting keyboard",
+    
+    // 長尾キーワード
+    "キーボード 腱鞘炎 対策",
+    "キーボード 肩こり 予防",
+    "分割キーボード おすすめ",
+    "エルゴノミクスキーボード 日本",
+    "プログラマー キーボード 分割",
+    "自作キーボード 初心者",
+    "ワイヤレス 分割キーボード",
+    "モジュール式 キーボード",
+    "キーボード カスタマイズ 自由",
+    "健康 キーボード おすすめ",
+    ],
+    authors: [{ name: "TOMOL Project - Modulate Team" }],
+    creator: "TOMOL Project",
+    publisher: "Modulate",
+    openGraph: {
+      title: isJapanese
+        ? "Modulate | 健康と効率を再定義するエルゴノミクス分割キーボード"
+        : "Modulate | Ergonomic Split Keyboard Redefining Health & Efficiency",
+      description: isJapanese
+        ? "モジュールとエルゴノミクスが生み出す次世代キーボード。TOMOLプロジェクトが開発する、自作キーボード愛好家のための革新的なガジェット"
+        : "Next-generation keyboard combining modular design and ergonomics. Innovative gadget for custom keyboard enthusiasts developed by TOMOL Project",
+      url: "https://modulate.tomol.jp",
+      siteName: "Modulate by TOMOL",
+      locale: isJapanese ? "ja_JP" : "en_US",
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: isJapanese
+        ? "Modulate | エルゴノミクス分割キーボード"
+        : "Modulate | Ergonomic Split Keyboard",
+      description: isJapanese
+        ? "健康と効率を再定義する次世代モジュラーキーボード - TOMOLプロジェクト"
+        : "Next-generation modular keyboard redefining health & efficiency - TOMOL Project",
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-video-preview": -1,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
+    },
+    alternates: {
+      canonical: `https://modulate.tomol.jp/${lang}`,
+      languages: {
+        "ja": "https://modulate.tomol.jp/ja",
+        "en": "https://modulate.tomol.jp/en",
+      },
+    },
+  };
+}
 
 export async function generateStaticParams() {
   return [{ lang: 'ja' }, { lang: 'en' }];
