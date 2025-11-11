@@ -2,13 +2,29 @@
 
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
-import { useRef } from 'react';
-import { Dictionary } from '@/lib/dictionaries';
+import { useRef, useState } from 'react';
+import { Dictionary, Advisor } from '@/lib/dictionaries';
 import { FiAward } from 'react-icons/fi';
+import ProfileModal from './ProfileModal';
+import { useParams } from 'next/navigation';
 
 export default function AdvisorsSection({ dict }: { dict: Dictionary }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const [selectedAdvisor, setSelectedAdvisor] = useState<Advisor | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const params = useParams();
+  const lang = params.lang as string;
+
+  const handleAdvisorClick = (advisor: Advisor) => {
+    setSelectedAdvisor(advisor);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setTimeout(() => setSelectedAdvisor(null), 300);
+  };
 
   return (
     <section ref={ref} className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
@@ -41,10 +57,11 @@ export default function AdvisorsSection({ dict }: { dict: Dictionary }) {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
-              className="text-center flex flex-col"
+              className="text-center flex flex-col cursor-pointer group"
+              onClick={() => handleAdvisorClick(advisor)}
             >
               {/* Advisor photo placeholder */}
-              <div className="aspect-square bg-gradient-to-br from-emerald-900/30 to-teal-900/30 dark:from-emerald-900/30 dark:to-teal-900/30 light:bg-emerald-50 rounded-xl sm:rounded-2xl flex items-center justify-center border border-emerald-500/20 dark:border-emerald-500/20 light:border-emerald-300/40 mb-4 sm:mb-6">
+              <div className="aspect-square bg-gradient-to-br from-emerald-900/30 to-teal-900/30 dark:from-emerald-900/30 dark:to-teal-900/30 light:bg-emerald-50 rounded-xl sm:rounded-2xl flex items-center justify-center border border-emerald-500/20 dark:border-emerald-500/20 light:border-emerald-300/40 mb-4 sm:mb-6 group-hover:border-emerald-400 transition-all group-hover:scale-105">
                 {/* Placeholder for advisor photo
                     Recommended: 400x400px, professional portrait */}
                 <div className="text-center text-gray-500 dark:text-gray-500 light:text-black px-4">
@@ -56,14 +73,14 @@ export default function AdvisorsSection({ dict }: { dict: Dictionary }) {
               </div>
               
               {/* Advisor comment */}
-              <div className="mb-4 sm:mb-6 p-4 sm:p-5 bg-emerald-100/50 dark:bg-emerald-900/10 rounded-xl border border-emerald-300/40 dark:border-emerald-500/20 flex-grow flex items-center">
+              <div className="mb-4 sm:mb-6 p-4 sm:p-5 bg-emerald-100/50 dark:bg-emerald-900/10 rounded-xl border border-emerald-300/40 dark:border-emerald-500/20 flex-grow flex items-center group-hover:bg-emerald-100 dark:group-hover:bg-emerald-900/20 transition-colors">
                 <p className="text-black dark:text-gray-300 text-sm sm:text-base leading-relaxed italic">
                   "{advisor.comment}"
                 </p>
               </div>
               
               {/* Advisor info */}
-              <div className="p-4 sm:p-6 bg-gray-50 dark:bg-white/5 rounded-xl backdrop-blur-sm border border-gray-200 dark:border-white/10">
+              <div className="p-4 sm:p-6 bg-gray-50 dark:bg-white/5 rounded-xl backdrop-blur-sm border border-gray-200 dark:border-white/10 group-hover:bg-gray-100 dark:group-hover:bg-white/10 transition-colors">
                 <h3 className="text-black dark:text-white text-xl sm:text-2xl font-bold mb-2 whitespace-pre-line">{advisor.name}</h3>
                 <p className="text-emerald-400 mb-2 text-sm sm:text-base">{advisor.title}</p>
                 <p className="text-gray-400 dark:text-gray-400 light:text-black text-xs sm:text-sm leading-relaxed">{advisor.affiliation}</p>
@@ -84,6 +101,15 @@ export default function AdvisorsSection({ dict }: { dict: Dictionary }) {
           </p>
         </motion.div>
       </div>
+
+      {/* Profile Modal */}
+      <ProfileModal
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+        profile={selectedAdvisor}
+        type="advisor"
+        lang={lang}
+      />
     </section>
   );
 }

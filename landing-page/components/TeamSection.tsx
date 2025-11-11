@@ -2,12 +2,28 @@
 
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
-import { useRef } from 'react';
-import { Dictionary } from '@/lib/dictionaries';
+import { useRef, useState } from 'react';
+import { Dictionary, TeamMember } from '@/lib/dictionaries';
+import ProfileModal from './ProfileModal';
+import { useParams } from 'next/navigation';
 
 export default function TeamSection({ dict }: { dict: Dictionary }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const [selectedMember, setSelectedMember] = useState<TeamMember | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const params = useParams();
+  const lang = params.lang as string;
+
+  const handleMemberClick = (member: TeamMember) => {
+    setSelectedMember(member);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setTimeout(() => setSelectedMember(null), 300);
+  };
 
   return (
     <section ref={ref} className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
@@ -37,10 +53,11 @@ export default function TeamSection({ dict }: { dict: Dictionary }) {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
-              className="text-center"
+              className="text-center cursor-pointer group"
+              onClick={() => handleMemberClick(member)}
             >
               {/* Member photo */}
-              <div className="aspect-square rounded-xl sm:rounded-2xl overflow-hidden border border-emerald-500/20 dark:border-emerald-500/20 mb-4 sm:mb-6 bg-gray-100 dark:bg-gray-800">
+              <div className="aspect-square rounded-xl sm:rounded-2xl overflow-hidden border border-emerald-500/20 dark:border-emerald-500/20 mb-4 sm:mb-6 bg-gray-100 dark:bg-gray-800 group-hover:border-emerald-400 transition-all group-hover:scale-105">
                 {index === 0 && (
                   <img 
                     src="/images/raito.jpg" 
@@ -60,7 +77,7 @@ export default function TeamSection({ dict }: { dict: Dictionary }) {
               </div>
               
               {/* Member info */}
-              <div className="p-4 sm:p-6 bg-gray-50 dark:bg-white/5 rounded-xl backdrop-blur-sm border border-gray-200 dark:border-white/10">
+              <div className="p-4 sm:p-6 bg-gray-50 dark:bg-white/5 rounded-xl backdrop-blur-sm border border-gray-200 dark:border-white/10 group-hover:bg-gray-100 dark:group-hover:bg-white/10 transition-colors">
                 <h3 className="text-black dark:text-white text-xl sm:text-2xl font-bold mb-2">{member.name}</h3>
                 <p className="text-emerald-400 mb-2 text-sm sm:text-base">{member.role}</p>
                 <p className="text-gray-500 dark:text-gray-500 light:text-black text-base sm:text-lg">{member.country}</p>
@@ -69,6 +86,15 @@ export default function TeamSection({ dict }: { dict: Dictionary }) {
           ))}
         </div>
       </div>
+
+      {/* Profile Modal */}
+      <ProfileModal
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+        profile={selectedMember}
+        type="team"
+        lang={lang}
+      />
     </section>
   );
 }

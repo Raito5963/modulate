@@ -22,6 +22,9 @@ export type TeamMember = {
   name: string;
   role: string;
   country: string;
+  bio?: string;
+  experience?: string[];
+  education?: string[];
 };
 
 export type Advisor = {
@@ -29,6 +32,9 @@ export type Advisor = {
   title: string;
   affiliation: string;
   comment: string;
+  bio?: string;
+  expertise?: string[];
+  publications?: string[];
 };
 
 export type Dictionary = {
@@ -37,6 +43,7 @@ export type Dictionary = {
     subtitle: string;
     cta: string;
     scrollDown: string;
+    disclaimer: string;
   };
   problem: {
     title: string;
@@ -91,6 +98,7 @@ const ja: Dictionary = {
     subtitle: "モジュールとエルゴノミクスが生み出す、次世代キーボード",
     cta: "先行予約する",
     scrollDown: "スクロールして詳細を見る",
+    disclaimer: "※現在開発段階であるため、今後デザインが変更する可能性があります。\n作業経過などはメールでお送りします。",
   },
   problem: {
     title: "タイピングによる痛み、\n諦めていませんか?",
@@ -159,18 +167,34 @@ const ja: Dictionary = {
     members: [
       {
         name: "望月輝翔",
-        role: "CEO・高校生",
+        role: "CEO・PCBデザイナー",
         country: "日本 🇯🇵",
+        bio: "中学生のころからタイピング中に痛みを感じる。解決策を調べる中で世界中に同じ悩みを持つ人がいることを知り、Modulateを立ち上げる。",
+        experience: [
+          "フロントエンド開発",
+          "基板・CAD設計",
+          "起業家育成コンテスト参加",
+        ],
+        education: [
+          "高校生",
+          "授業と独学で情報分野を勉強中",
+        ],
       },
       {
         name: "Team Member",
         role: "Engineer",
         country: "アメリカ 🇺🇸",
+        bio: "掲載準備中",
+        experience: ["掲載準備中"],
+        education: ["掲載準備中"],
       },
       {
         name: "Team Member",
         role: "CAD Designer",
         country: "フランス 🇫🇷",
+        bio: "掲載準備中",
+        experience: ["掲載準備中"],
+        education: ["掲載準備中"],
       },
     ],
   },
@@ -183,13 +207,26 @@ const ja: Dictionary = {
         name: "暦本純一教授",
         title: "UI・HCI・HA",
         affiliation: "東京大学",
-        comment: "エルゴノミクスとインタラクションデザインの観点から、このプロジェクトは非常に革新的です。若い世代が健康と効率の両面からキーボードを再設計する取り組みを応援しています。",
+        comment: "掲載準備中",
+        bio: "ヒューマンコンピュータインタラクション(HCI)およびヒューマンオーグメンテーション(HA)分野の第一人者。",
+        expertise: [
+          "UI・UXデザイン",
+          "ヒューマンコンピュータインタラクション",
+          "ヒューマンオーグメンテーション",
+          "拡張現実(AR)",
+        ],
+        publications: [
+          "掲載準備中",
+        ],
       },
       {
         name: "専門家",
         title: "エルゴノミクス・製品設計",
         affiliation: "研究機関",
-        comment: "モジュール設計とエルゴノミクスの融合は、今後のキーボード設計において重要な方向性です。",
+        comment: "掲載準備中",
+        bio: "掲載準備中",
+        expertise: ["掲載準備中"],
+        publications: ["掲載準備中"],
       },
     ],
   },
@@ -215,6 +252,7 @@ const en: Dictionary = {
     subtitle: "Next-generation keyboard born from modular design and ergonomic excellence",
     cta: "Pre-Order Now",
     scrollDown: "Scroll to learn more",
+    disclaimer: "※This product is currently in development and the design may change.\nWe will send you updates on our progress via email.",
   },
   problem: {
     title: "Suffering from\nTyping Pain?",
@@ -283,18 +321,34 @@ const en: Dictionary = {
     members: [
       {
         name: "Raito Mochiduki",
-        role: "CEO/High School Student",
+        role: "CEO・PCB Designer",
         country: "Japan 🇯🇵",
+        bio: "Started experiencing pain while typing in middle school. While researching solutions, discovered many people worldwide share the same problem and founded Modulate.",
+        experience: [
+          "Frontend Development",
+          "PCB・CAD Design",
+          "Entrepreneurship Program Participant",
+        ],
+        education: [
+          "High School Student",
+          "Studying Information Technology through classes and self-learning",
+        ],
       },
       {
         name: "Team Member",
         role: "Engineer",
         country: "USA 🇺🇸",
+        bio: "Content under preparation",
+        experience: ["Content under preparation"],
+        education: ["Content under preparation"],
       },
       {
         name: "Team Member",
         role: "CAD Designer",
         country: "France 🇫🇷",
+        bio: "Content under preparation",
+        experience: ["Content under preparation"],
+        education: ["Content under preparation"],
       },
     ],
   },
@@ -307,13 +361,26 @@ const en: Dictionary = {
         name: "Professor Jun Rekimoto",
         title: "UI・HCI・HA",
         affiliation: "The University of Tokyo",
-        comment: "From the perspective of ergonomics and interaction design, this project is highly innovative. I support the younger generation's efforts to redesign keyboards from both health and efficiency perspectives.",
+        comment: "Content under preparation",
+        bio: "Leading expert in Human-Computer Interaction (HCI) and Human Augmentation (HA).",
+        expertise: [
+          "UI/UX Design",
+          "Human-Computer Interaction",
+          "Human Augmentation",
+          "Augmented Reality (AR)",
+        ],
+        publications: [
+          "Content under preparation",
+        ],
       },
       {
         name: "Specialist",
         title: "Ergonomics & Product Design",
         affiliation: "Research Institute",
-        comment: "The fusion of modular design and ergonomics is an important direction for future keyboard design.",
+        comment: "Content under preparation",
+        bio: "Content under preparation",
+        expertise: ["Content under preparation"],
+        publications: ["Content under preparation"],
       },
     ],
   },

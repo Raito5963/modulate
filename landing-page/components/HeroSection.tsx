@@ -55,10 +55,9 @@ export default function HeroSection({ dict }: { dict: Dictionary }) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="mt-6 sm:mt-8 text-xs sm:text-sm text-gray-600 dark:text-gray-400 max-w-2xl mx-auto px-4"
+          className="mt-6 sm:mt-8 text-xs sm:text-sm text-gray-600 dark:text-gray-400 max-w-2xl mx-auto px-4 whitespace-pre-line"
         >
-          ※現在開発段階であるため、今後デザインが変更する可能性があります。<br />
-          作業経過などはメールでお送りします。
+          {dict.hero.disclaimer}
         </motion.p>
       </div>
 
