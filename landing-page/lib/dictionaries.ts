@@ -211,7 +211,7 @@ const ja: Dictionary = {
   },
   preorder: {
     title: "先行予約受付中",
-    subtitle: "2026年の夏ごろの出荷を予定しています。\n先行予約で特別価格をご用意。",
+    subtitle: "2026年の夏ごろの出荷を予定しています。\n開発状況など、順次情報を発信します。",
     namePlaceholder: "お名前",
     emailPlaceholder: "メールアドレス",
     messagePlaceholder: "メッセージ(任意)",
@@ -336,7 +336,7 @@ const en: Dictionary = {
   },
   preorder: {
     title: "Pre-Order Now",
-    subtitle: "Shipping planned for around summer 2026.\nSpecial pricing for pre-orders.",
+    subtitle: "Shipping planned for around summer 2026.\nWe will share development updates regularly.",
     namePlaceholder: "Your Name",
     emailPlaceholder: "Email Address",
     messagePlaceholder: "Message (Optional)",
