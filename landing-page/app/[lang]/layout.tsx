@@ -15,11 +15,11 @@ export async function generateMetadata({
 
   return {
     title: isJapanese
-      ? "Modulate（モジュレート）| エルゴノミクス分割キーボード | TOMOLプロジェクト"
-      : "Modulate | Ergonomic Split Keyboard | TOMOL Project",
+      ? "Modulate | エルゴノミクス分割キーボード"
+      : "Modulate | Ergonomic Split Keyboard",
     description: isJapanese
-      ? "Modulate（モジュレート）は人間工学に基づいた次世代の分割キーボード。モジュール式設計で自作キーボード愛好家やキーボード沼の方にも最適。エルゴノミクス・ガジェット・スタートアップのTOMOLプロジェクトが開発"
-      : "Modulate is a next-generation split keyboard based on ergonomics. Perfect for custom keyboard enthusiasts with modular design. Developed by TOMOL Project, a startup combining ergonomics and gadget technology",
+      ? "Modulateは人間工学に基づいた次世代の分割キーボード。モジュール式設計で自作キーボード愛好家やキーボード沼の方にも最適。"
+      : "Modulate is a next-generation split keyboard based on ergonomics. Perfect for custom keyboard enthusiasts with modular design.",
     keywords: [
     // ブランド・プロジェクト名
     "Modulate",
@@ -152,18 +152,18 @@ export async function generateMetadata({
     "キーボード カスタマイズ 自由",
     "健康 キーボード おすすめ",
     ],
-    authors: [{ name: "TOMOL Project - Modulate Team" }],
-    creator: "TOMOL Project",
+    authors: [{ name: "Modulate Team" }],
+    creator: "Raito Mochiduki",
     publisher: "Modulate",
     openGraph: {
       title: isJapanese
         ? "Modulate | 健康と効率を再定義するエルゴノミクス分割キーボード"
         : "Modulate | Ergonomic Split Keyboard Redefining Health & Efficiency",
       description: isJapanese
-        ? "モジュールとエルゴノミクスが生み出す次世代キーボード。TOMOLプロジェクトが開発する、自作キーボード愛好家のための革新的なガジェット"
-        : "Next-generation keyboard combining modular design and ergonomics. Innovative gadget for custom keyboard enthusiasts developed by TOMOL Project",
-      url: "https://modulate.tomol.jp",
-      siteName: "Modulate by TOMOL",
+        ? "モジュールとエルゴノミクスが生み出す次世代キーボード。長時間タイピングする人にとって最適なキーボード。"
+        : "Next-generation keyboard combining modular design and ergonomics. It is perfect for people who type for long hours.",
+      url: "https://modulate.aokiju.com",
+      siteName: "Modulate | Ergonomic Split Keyboard",
       locale: isJapanese ? "ja_JP" : "en_US",
       type: "website",
     },
@@ -173,8 +173,8 @@ export async function generateMetadata({
         ? "Modulate | エルゴノミクス分割キーボード"
         : "Modulate | Ergonomic Split Keyboard",
       description: isJapanese
-        ? "健康と効率を再定義する次世代モジュラーキーボード - TOMOLプロジェクト"
-        : "Next-generation modular keyboard redefining health & efficiency - TOMOL Project",
+        ? "健康と効率を再定義する次世代モジュールキーボード"
+        : "Next-generation modular keyboard redefining health & efficiency",
     },
     robots: {
       index: true,
