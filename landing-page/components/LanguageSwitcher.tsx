@@ -40,7 +40,7 @@ export default function LanguageSwitcher({ currentLang }: { currentLang: string 
             : 'text-black dark:text-white hover:bg-gray-100 dark:hover:bg-white/20'
         }`}
       >
-        日本語
+        JP
       </button>
       <button
         onClick={() => handleLanguageChange('en')}
@@ -50,7 +50,7 @@ export default function LanguageSwitcher({ currentLang }: { currentLang: string 
             : 'text-black dark:text-white hover:bg-gray-100 dark:hover:bg-white/20'
         }`}
       >
-        English
+        EN
       </button>
     </motion.div>
   );
