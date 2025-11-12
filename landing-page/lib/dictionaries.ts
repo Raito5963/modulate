@@ -200,6 +200,13 @@ const ja: Dictionary = {
         //bio: "情報科学者。東京大学大学院情報学環教授、ソニーコンピュータサイエンス研究所フェロー・副所長・SonyCSL Kyotoディレクター。ヒューマンコンピュータインタラクション、拡張現実感、テクノロジーによる人間の拡張、人間とAIの融合に興味を持つ。世界初のモバイルARシステムNaviCam、世界初のマーカー型ARシステムCyberCode、マルチタッチシステムSmartSkinの発明者。人間の能力がネットワークを介し結合し拡張していく未来ビジョン、IoA(Internet of Abilities)を提唱。",
         bio: "掲載準備中",
       },
+      {
+        name: "掲載準備中",
+        title: "",
+        affiliation: "",
+        comment: "掲載準備中",
+        bio: "掲載準備中",
+      },
     ],
   },
   preorder: {
