@@ -187,6 +187,9 @@ export async function generateMetadata({
         "max-snippet": -1,
       },
     },
+    verification: {
+      google: "Bp-hw0NkDuQqAU3SUb34lLqK9W21R0VQXKnz1K4rJX0",
+    },
     alternates: {
       canonical: `https://modulate.tomol.jp/${lang}`,
       languages: {
