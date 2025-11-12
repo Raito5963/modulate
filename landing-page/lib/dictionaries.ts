@@ -22,6 +22,7 @@ export type TeamMember = {
   name: string;
   role: string;
   country: string;
+  image?: string;
   bio?: string;
   experience?: string[];
   education?: string[];
@@ -32,9 +33,8 @@ export type Advisor = {
   title: string;
   affiliation: string;
   comment: string;
+  image?: string;
   bio?: string;
-  expertise?: string[];
-  publications?: string[];
 };
 
 export type Dictionary = {
@@ -102,7 +102,7 @@ const ja: Dictionary = {
   },
   problem: {
     title: "タイピングによる痛み、\n諦めていませんか?",
-    subtitle: "世界中で多くの人々がタイピングによる手や手首の痛みに苦しんでいます",
+    subtitle: "世界中で多くの人々がタイピングによる手や手首の痛みに苦しんでいます。",
     statistics: [
       {
         value: "50%",
@@ -110,38 +110,38 @@ const ja: Dictionary = {
       },
       {
         value: "12.5%",
-        description: "作業効率が悪いと感じている人の割合",
+        description: "キーボードの配列などで作業効率が悪いと感じている人の割合",
       },
       {
         value: "増加中",
-        description: "RSI・CTSなどの疾患リスク",
+        description: "キーボードが原因で、RSIやCTS、腱鞘炎などを発症している人の数",
       },
     ],
   },
   solution: {
     title: "Modulateが提案する\n3つのソリューション",
-    subtitle: "従来のキーボードの課題を解決する、革新的なアプローチ",
+    subtitle: "従来のキーボードの課題を解決する、革新的なアプローチ。",
     features: [
       {
         title: "エルゴノミクスデザイン",
-        description: "縦分割タイル型デザインで手首の負担を軽減し、自然な姿勢でのタイピングを実現",
+        description: "縦分割タイル型デザインで手首の負担を軽減し、自然な姿勢でのタイピングを実現。",
         imagePlaceholder: "Ergonomic split design close-up",
       },
       {
         title: "モジュール設計",
-        description: "自由に組み替えられるモジュール構造で、あなたの作業スタイルに最適化",
+        description: "自由に組み替えられるモジュール構造で、あなたの作業スタイルに最適化。",
         imagePlaceholder: "モジュール交換の様子",
       },
       {
         title: "ワイヤレス接続",
-        description: "Bluetooth接続でケーブルの煩わしさから解放。どこでも快適に作業",
+        description: "Bluetooth接続でケーブルの煩わしさから解放。\nどこでも快適に作業が可能。",
         imagePlaceholder: "Wireless connectivity lifestyle",
       },
     ],
   },
   features: {
     title: "すべての機能を\nあなたのために",
-    subtitle: "プログラマー、デザイナー、ライターのために設計された機能",
+    subtitle: "プログラマー、デザイナー、ライターのために設計された機能。",
     items: [
       { name: "カスタマイズ可能なキーマップ" },
       { name: "ホットスワップ対応スイッチ" },
@@ -163,76 +163,48 @@ const ja: Dictionary = {
   },
   team: {
     title: "グローバルチームが開発",
-    subtitle: "日本、アメリカ、フランスから集まった学生たちが協力してプロジェクトを推進",
+    subtitle: "世界中から集まったメンバーが協力してプロジェクトを進めています",
     members: [
       {
         name: "望月輝翔",
-        role: "CEO・PCBデザイナー",
+        role: "CEO / WEB・アプリエンジニア / PCBデザイナー",
         country: "日本 🇯🇵",
-        bio: "中学生のころからタイピング中に痛みを感じる。解決策を調べる中で世界中に同じ悩みを持つ人がいることを知り、Modulateを立ち上げる。",
-        experience: [
-          "フロントエンド開発",
-          "基板・CAD設計",
-          "起業家育成コンテスト参加",
-        ],
-        education: [
-          "高校生",
-          "授業と独学で情報分野を勉強中",
-        ],
+        image: "/images/raito.jpg",
+        bio: "中学生のころからタイピング中に痛みを感じる。解決策を調べる中で世界中に同じ悩みを持つ人がいることを知り、Modulateを立ち上げる。現在高校3年生。",
       },
       {
-        name: "Team Member",
-        role: "Engineer",
+        name: "monide",
+        role: "エンジニア",
         country: "アメリカ 🇺🇸",
-        bio: "掲載準備中",
-        experience: ["掲載準備中"],
-        education: ["掲載準備中"],
+        image: "/images/team/monide.jpg",
+        bio: "アメリカ在住の学生。情報科学を専攻しており、エルゴノミクスのキーボードの会社に勤めている。キーボードや自作配列を製作した経験がある。",
       },
       {
-        name: "Team Member",
-        role: "CAD Designer",
+        name: "掲載準備中",
+        role: "CAD デザイナー",
         country: "フランス 🇫🇷",
         bio: "掲載準備中",
-        experience: ["掲載準備中"],
-        education: ["掲載準備中"],
       },
     ],
   },
   advisors: {
     title: "有識者による監修",
-    subtitle: "大学教授や専門家の協力を得てプロジェクトを進めています",
-    note: "※ 正式な名称は承諾を得てから公開予定です",
+    subtitle: "大学教授や専門家の協力を得てプロジェクトを進めています。",
+    note: "※ 本人から掲載許可を得て公開しています。",
     members: [
       {
-        name: "暦本純一教授",
-        title: "UI・HCI・HA",
-        affiliation: "東京大学",
+        name: "掲載準備中",
+        title: "",
+        affiliation: "",
         comment: "掲載準備中",
-        bio: "ヒューマンコンピュータインタラクション(HCI)およびヒューマンオーグメンテーション(HA)分野の第一人者。",
-        expertise: [
-          "UI・UXデザイン",
-          "ヒューマンコンピュータインタラクション",
-          "ヒューマンオーグメンテーション",
-          "拡張現実(AR)",
-        ],
-        publications: [
-          "掲載準備中",
-        ],
-      },
-      {
-        name: "専門家",
-        title: "エルゴノミクス・製品設計",
-        affiliation: "研究機関",
-        comment: "掲載準備中",
+        //bio: "情報科学者。東京大学大学院情報学環教授、ソニーコンピュータサイエンス研究所フェロー・副所長・SonyCSL Kyotoディレクター。ヒューマンコンピュータインタラクション、拡張現実感、テクノロジーによる人間の拡張、人間とAIの融合に興味を持つ。世界初のモバイルARシステムNaviCam、世界初のマーカー型ARシステムCyberCode、マルチタッチシステムSmartSkinの発明者。人間の能力がネットワークを介し結合し拡張していく未来ビジョン、IoA(Internet of Abilities)を提唱。",
         bio: "掲載準備中",
-        expertise: ["掲載準備中"],
-        publications: ["掲載準備中"],
       },
     ],
   },
   preorder: {
     title: "先行予約受付中",
-    subtitle: "2025年内の出荷を予定しています。先行予約で特別価格をご用意",
+    subtitle: "2026年の夏ごろの出荷を予定しています。\n先行予約で特別価格をご用意。",
     namePlaceholder: "お名前",
     emailPlaceholder: "メールアドレス",
     messagePlaceholder: "メッセージ(任意)",
@@ -256,46 +228,46 @@ const en: Dictionary = {
   },
   problem: {
     title: "Suffering from\nTyping Pain?",
-    subtitle: "Millions worldwide experience hand and wrist pain from typing",
+    subtitle: "Many people worldwide suffer from hand and wrist pain caused by typing.",
     statistics: [
       {
         value: "50%",
-        description: "Experience pain in fingers, wrists, or arms while typing",
+        description: "Percentage of people who experience pain in fingers, wrists, or arms while typing",
       },
       {
         value: "12.5%",
-        description: "Feel their work efficiency is poor",
+        description: "Percentage of people who feel their work efficiency is poor due to keyboard layout",
       },
       {
         value: "Rising",
-        description: "Risk of RSI & CTS conditions",
+        description: "Risk of keyboard-related conditions such as RSI and CTS",
       },
     ],
   },
   solution: {
     title: "Three Solutions\nby Modulate",
-    subtitle: "Revolutionary keyboard combining comfort and portability",
+    subtitle: "An innovative approach to solving the challenges of traditional keyboards.",
     features: [
       {
         title: "Ergonomic Design",
-        description: "Vertical split-tile design reduces wrist strain and enables natural typing posture",
+        description: "Vertical split-tile design reduces wrist strain and enables natural typing posture.",
         imagePlaceholder: "Ergonomic split design close-up",
       },
       {
         title: "Modular System",
-        description: "Freely swap modules to match your workflow. Optimized for how you work",
+        description: "Freely reconfigurable modular structure optimized for your work style.",
         imagePlaceholder: "Modular components interchange",
       },
       {
-        title: "Wireless Freedom",
-        description: "Bluetooth connectivity frees you from cable hassles. Work comfortably anywhere",
+        title: "Wireless Connection",
+        description: "Bluetooth connectivity frees you from cable hassles.\nWork comfortably anywhere.",
         imagePlaceholder: "Wireless connectivity lifestyle",
       },
     ],
   },
   features: {
     title: "Every Feature\nFor You",
-    subtitle: "Designed for programmers, designers, and writers",
+    subtitle: "Features designed for programmers, designers, and writers.",
     items: [
       { name: "Customizable Keymaps" },
       { name: "Hot-swappable Switches" },
@@ -317,76 +289,47 @@ const en: Dictionary = {
   },
   team: {
     title: "Built by Global Team",
-    subtitle: "Students from Japan, USA, and France collaborating to drive the project forward",
+    subtitle: "Members from around the world collaborating to drive the project forward",
     members: [
       {
         name: "Raito Mochiduki",
-        role: "CEO・PCB Designer",
+        role: "CEO / Web & App Engineer / PCB Designer",
         country: "Japan 🇯🇵",
-        bio: "Started experiencing pain while typing in middle school. While researching solutions, discovered many people worldwide share the same problem and founded Modulate.",
-        experience: [
-          "Frontend Development",
-          "PCB・CAD Design",
-          "Entrepreneurship Program Participant",
-        ],
-        education: [
-          "High School Student",
-          "Studying Information Technology through classes and self-learning",
-        ],
+        image: "/images/raito.jpg",
+        bio: "Started experiencing pain while typing in middle school. While researching solutions, discovered many people worldwide share the same problem and founded Modulate. Currently a high school senior (Grade 12).",
       },
       {
-        name: "Team Member",
+        name: "monide",
         role: "Engineer",
         country: "USA 🇺🇸",
-        bio: "Content under preparation",
-        experience: ["Content under preparation"],
-        education: ["Content under preparation"],
+        image: "/images/team/monide.jpg",
+        bio: "A student living in the United States. Majoring in computer science and working at an ergonomic keyboard company. Has experience in creating keyboards and custom layouts.",
       },
       {
         name: "Team Member",
         role: "CAD Designer",
         country: "France 🇫🇷",
         bio: "Content under preparation",
-        experience: ["Content under preparation"],
-        education: ["Content under preparation"],
       },
     ],
   },
   advisors: {
     title: "Expert Supervision",
-    subtitle: "Advancing the project with guidance from university professors and specialists",
-    note: "※ Official names will be published upon approval",
+    subtitle: "Advancing the project with guidance from university professors and specialists.",
+    note: "※ Published with permission from the individuals.",
     members: [
       {
-        name: "Professor Jun Rekimoto",
-        title: "UI・HCI・HA",
-        affiliation: "The University of Tokyo",
-        comment: "Content under preparation",
-        bio: "Leading expert in Human-Computer Interaction (HCI) and Human Augmentation (HA).",
-        expertise: [
-          "UI/UX Design",
-          "Human-Computer Interaction",
-          "Human Augmentation",
-          "Augmented Reality (AR)",
-        ],
-        publications: [
-          "Content under preparation",
-        ],
-      },
-      {
-        name: "Specialist",
-        title: "Ergonomics & Product Design",
-        affiliation: "Research Institute",
+        name: "Content under preparation",
+        title: "",
+        affiliation: "",
         comment: "Content under preparation",
         bio: "Content under preparation",
-        expertise: ["Content under preparation"],
-        publications: ["Content under preparation"],
       },
     ],
   },
   preorder: {
     title: "Pre-Order Now",
-    subtitle: "Shipping planned within 2025. Special pricing for pre-orders",
+    subtitle: "Shipping planned for around summer 2026.\nSpecial pricing for pre-orders.",
     namePlaceholder: "Your Name",
     emailPlaceholder: "Email Address",
     messagePlaceholder: "Message (Optional)",

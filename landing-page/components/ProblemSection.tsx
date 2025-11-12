@@ -1,9 +1,49 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, useMotionValue, useTransform, animate } from 'framer-motion';
 import { useInView } from 'framer-motion';
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
 import { Dictionary } from '@/lib/dictionaries';
+
+function Counter({ value, isInView }: { value: string; isInView: boolean }) {
+  const count = useMotionValue(0);
+  
+  // 数値部分を抽出
+  const match = value.match(/(\d+\.?\d*)/);
+  const targetValue = match ? parseFloat(match[1]) : 0;
+  const hasDecimal = match && match[1].includes('.');
+  
+  const rounded = useTransform(count, (latest) => {
+    // 小数点がある場合は小数点1桁、ない場合は整数
+    if (hasDecimal) {
+      return Math.round(latest * 10) / 10;
+    }
+    return Math.round(latest);
+  });
+
+  useEffect(() => {
+    if (isInView && match) {
+      const controls = animate(count, targetValue, {
+        duration: 4.5,
+        ease: [0.16, 1, 0.3, 1] // カスタムベジェ曲線: 最初速く、最後ゆっくり
+      });
+      return controls.stop;
+    }
+  }, [isInView, targetValue, count, match]);
+
+  if (!match) {
+    return <>{value}</>;
+  }
+
+  const suffix = value.replace(match[1], '').trim();
+
+  return (
+    <>
+      <motion.span>{rounded}</motion.span>
+      {suffix && <span>{suffix}</span>}
+    </>
+  );
+}
 
 export default function ProblemSection({ dict }: { dict: Dictionary }) {
   const ref = useRef(null);
@@ -53,7 +93,7 @@ export default function ProblemSection({ dict }: { dict: Dictionary }) {
               className="text-center p-6 sm:p-8 bg-gray-50 dark:bg-white/5 rounded-xl sm:rounded-2xl backdrop-blur-sm border border-gray-200 dark:border-white/10"
             >
               <div className="text-4xl sm:text-5xl md:text-6xl font-bold mb-3 sm:mb-4 bg-gradient-to-r from-red-400 to-orange-400 bg-clip-text text-transparent">
-                {stat.value}
+                <Counter value={stat.value} isInView={isInView} />
               </div>
               <p className="text-sm sm:text-base text-gray-400 dark:text-gray-400 light:text-black">{stat.description}</p>
             </motion.div>

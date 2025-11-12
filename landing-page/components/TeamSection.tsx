@@ -58,14 +58,13 @@ export default function TeamSection({ dict }: { dict: Dictionary }) {
             >
               {/* Member photo */}
               <div className="aspect-square rounded-xl sm:rounded-2xl overflow-hidden border border-emerald-500/20 dark:border-emerald-500/20 mb-4 sm:mb-6 bg-gray-100 dark:bg-gray-800 group-hover:border-emerald-400 transition-all group-hover:scale-105">
-                {index === 0 && (
+                {member.image ? (
                   <img 
-                    src="/images/raito.jpg" 
+                    src={member.image} 
                     alt={member.name}
                     className="w-full h-full object-cover"
                   />
-                )}
-                {index !== 0 && (
+                ) : (
                   <div className="w-full h-full bg-gradient-to-br from-emerald-900/30 to-teal-900/30 dark:from-emerald-900/30 dark:to-teal-900/30 flex items-center justify-center">
                     <div className="text-center text-gray-500 dark:text-gray-500 px-4">
                       <p className="text-xs sm:text-sm">Member Photo</p>
