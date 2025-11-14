@@ -60,16 +60,22 @@ export default function AdvisorsSection({ dict }: { dict: Dictionary }) {
               className="text-center flex flex-col cursor-pointer group"
               onClick={() => handleAdvisorClick(advisor)}
             >
-              {/* Advisor photo placeholder */}
-              <div className="aspect-square bg-gradient-to-br from-emerald-900/30 to-teal-900/30 dark:from-emerald-900/30 dark:to-teal-900/30 light:bg-emerald-50 rounded-xl sm:rounded-2xl flex items-center justify-center border border-emerald-500/20 dark:border-emerald-500/20 light:border-emerald-300/40 mb-4 sm:mb-6 group-hover:border-emerald-400 transition-all group-hover:scale-105">
-                {/* Placeholder for advisor photo
-                    Recommended: 400x400px, professional portrait */}
-                <div className="text-center text-gray-500 dark:text-gray-500 light:text-black px-4">
-                  <FiAward className="text-4xl sm:text-5xl md:text-6xl text-emerald-400 mx-auto mb-2" />
-                  <p className="text-xs sm:text-sm">Advisor Photo</p>
-                  <p className="text-xs hidden sm:block">400x400px</p>
-                  <p className="text-xs">{advisor.name}</p>
-                </div>
+              {/* Advisor photo */}
+              <div className="aspect-square bg-gradient-to-br from-emerald-900/30 to-teal-900/30 dark:from-emerald-900/30 dark:to-teal-900/30 light:bg-emerald-50 rounded-xl sm:rounded-2xl flex items-center justify-center border border-emerald-500/20 dark:border-emerald-500/20 light:border-emerald-300/40 mb-4 sm:mb-6 group-hover:border-emerald-400 transition-all group-hover:scale-105 overflow-hidden">
+                {advisor.image ? (
+                  <img
+                    src={advisor.image}
+                    alt={advisor.name}
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <div className="text-center text-gray-500 dark:text-gray-500 light:text-black px-4">
+                    <FiAward className="text-4xl sm:text-5xl md:text-6xl text-emerald-400 mx-auto mb-2" />
+                    <p className="text-xs sm:text-sm">Advisor Photo</p>
+                    <p className="text-xs hidden sm:block">400x400px</p>
+                    <p className="text-xs">{advisor.name}</p>
+                  </div>
+                )}
               </div>
               
               {/* Advisor comment */}

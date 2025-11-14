@@ -193,12 +193,12 @@ const ja: Dictionary = {
     note: "※ 本人から掲載許可を得て公開しています。",
     members: [
       {
-        name: "掲載準備中",
-        title: "",
-        affiliation: "",
-        comment: "掲載準備中",
-        //bio: "情報科学者。東京大学大学院情報学環教授、ソニーコンピュータサイエンス研究所フェロー・副所長・SonyCSL Kyotoディレクター。ヒューマンコンピュータインタラクション、拡張現実感、テクノロジーによる人間の拡張、人間とAIの融合に興味を持つ。世界初のモバイルARシステムNaviCam、世界初のマーカー型ARシステムCyberCode、マルチタッチシステムSmartSkinの発明者。人間の能力がネットワークを介し結合し拡張していく未来ビジョン、IoA(Internet of Abilities)を提唱。",
-        bio: "掲載準備中",
+        name: "暦本 純一",
+        title: "情報科学者",
+        affiliation: "東京大学大学院情報学環",
+        comment: "長時間でも疲れない分割型キーボード、機能を拡張するモジュール性もあるようで期待しています！",
+        image: "/images/advisors/rekimoto.webp",
+        bio: "情報科学者。東京大学大学院情報学環教授、ソニーコンピュータサイエンス研究所フェロー・CSO・SonyCSL Kyotoディレクター。ヒューマンコンピュータインタラクション、拡張現実感、テクノロジーによる人間の拡張、人間とAIの融合に興味を持つ。世界初のモバイルARシステムNaviCam、世界初のマーカー型ARシステムCyberCode、マルチタッチシステムSmartSkinの発明者。人間の能力がネットワークを介し結合し拡張していく未来ビジョン、IoA(Internet of Abilities)を提唱。",
       },
       {
         name: "掲載準備中",
@@ -325,6 +325,14 @@ const en: Dictionary = {
     subtitle: "Advancing the project with guidance from university professors and specialists.",
     note: "※ Published with permission from the individuals.",
     members: [
+      {
+        name: "Jun Rekimoto",
+        title: "Information Scientist",
+        affiliation: "Graduate School of Information, The University of Tokyo",
+        comment: "I'm excited about this split keyboard that won't tire you even after long hours, and it seems to have modularity that extends functionality!",
+        image: "/images/advisors/rekimoto.webp",
+        bio: "Information scientist. Professor at the Graduate School of Information at The University of Tokyo, Fellow and CSO of Sony Computer Science Laboratories, and Director of SonyCSL Kyoto. Interested in human-computer interaction, augmented reality, human augmentation through technology, and the fusion of humans and AI. Inventor of NaviCam (world's first mobile AR system), CyberCode (world's first marker-based AR system), and SmartSkin (multi-touch system). Advocates for IoA (Internet of Abilities), a future vision where human capabilities are connected and enhanced through networks.",
+      },
       {
         name: "Content under preparation",
         title: "",
