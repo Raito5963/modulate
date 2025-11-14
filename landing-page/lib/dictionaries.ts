@@ -49,6 +49,10 @@ export type Dictionary = {
     title: string;
     subtitle: string;
     statistics: Statistic[];
+    survey: {
+      description: string;
+      note: string;
+    };
   };
   solution: {
     title: string;
@@ -105,11 +109,11 @@ const ja: Dictionary = {
     subtitle: "世界中で多くの人々がタイピングによる手や手首の痛みに苦しんでいます。",
     statistics: [
       {
-        value: "50%",
+        value: "51%",
         description: "タイピング中に指・手首・腕に痛みを感じる人の割合",
       },
       {
-        value: "12.5%",
+        value: "13.8%",
         description: "キーボードの配列などで作業効率が悪いと感じている人の割合",
       },
       {
@@ -117,6 +121,10 @@ const ja: Dictionary = {
         description: "キーボードが原因で、RSIやCTS、腱鞘炎などを発症している人の数",
       },
     ],
+    survey: {
+      description: "調査対象：世界各国、10代〜60代の男女200名を対象としたオンラインアンケート及びインタビュー調査",
+      note: "※ 出典：Modulate開発チーム調査（2025年実施）",
+    },
   },
   solution: {
     title: "Modulateが提案する\n3つのソリューション",
@@ -183,6 +191,7 @@ const ja: Dictionary = {
         name: "掲載準備中",
         role: "CAD デザイナー",
         country: "フランス 🇫🇷",
+        image: "/images/team/france.jpeg",
         bio: "掲載準備中",
       },
     ],
@@ -199,13 +208,6 @@ const ja: Dictionary = {
         comment: "長時間でも疲れない分割型キーボード、機能を拡張するモジュール性もあるようで期待しています！",
         image: "/images/advisors/rekimoto.webp",
         bio: "情報科学者。東京大学大学院情報学環教授、ソニーコンピュータサイエンス研究所フェロー・CSO・SonyCSL Kyotoディレクター。ヒューマンコンピュータインタラクション、拡張現実感、テクノロジーによる人間の拡張、人間とAIの融合に興味を持つ。世界初のモバイルARシステムNaviCam、世界初のマーカー型ARシステムCyberCode、マルチタッチシステムSmartSkinの発明者。人間の能力がネットワークを介し結合し拡張していく未来ビジョン、IoA(Internet of Abilities)を提唱。",
-      },
-      {
-        name: "掲載準備中",
-        title: "",
-        affiliation: "",
-        comment: "掲載準備中",
-        bio: "掲載準備中",
       },
     ],
   },
@@ -238,11 +240,11 @@ const en: Dictionary = {
     subtitle: "Many people worldwide suffer from hand and wrist pain caused by typing.",
     statistics: [
       {
-        value: "50%",
+        value: "51%",
         description: "Percentage of people who experience pain in fingers, wrists, or arms while typing",
       },
       {
-        value: "12.5%",
+        value: "13.8%",
         description: "Percentage of people who feel their work efficiency is poor due to keyboard layout",
       },
       {
@@ -250,6 +252,10 @@ const en: Dictionary = {
         description: "Risk of keyboard-related conditions such as RSI and CTS",
       },
     ],
+    survey: {
+      description: "Survey: Online questionnaire and interview study conducted with 200 participants (men and women aged 10-60) across countries worldwide.",
+      note: "※ Source: Modulate Development Team Research (2025)",
+    },
   },
   solution: {
     title: "Three Solutions\nby Modulate",
@@ -316,6 +322,7 @@ const en: Dictionary = {
         name: "Team Member",
         role: "CAD Designer",
         country: "France 🇫🇷",
+        image: "/images/team/france.jpeg",
         bio: "Content under preparation",
       },
     ],
@@ -332,13 +339,6 @@ const en: Dictionary = {
         comment: "I'm excited about this split keyboard that won't tire you even after long hours, and it seems to have modularity that extends functionality!",
         image: "/images/advisors/rekimoto.webp",
         bio: "Information scientist. Professor at the Graduate School of Information at The University of Tokyo, Fellow and CSO of Sony Computer Science Laboratories, and Director of SonyCSL Kyoto. Interested in human-computer interaction, augmented reality, human augmentation through technology, and the fusion of humans and AI. Inventor of NaviCam (world's first mobile AR system), CyberCode (world's first marker-based AR system), and SmartSkin (multi-touch system). Advocates for IoA (Internet of Abilities), a future vision where human capabilities are connected and enhanced through networks.",
-      },
-      {
-        name: "Content under preparation",
-        title: "",
-        affiliation: "",
-        comment: "Content under preparation",
-        bio: "Content under preparation",
       },
     ],
   },

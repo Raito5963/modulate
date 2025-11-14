@@ -83,7 +83,7 @@ export default function ProblemSection({ dict }: { dict: Dictionary }) {
         </motion.div>
 
         {/* Statistics */}
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mb-8 sm:mb-12">
           {dict.problem.statistics.map((stat, index) => (
             <motion.div
               key={index}
@@ -99,6 +99,23 @@ export default function ProblemSection({ dict }: { dict: Dictionary }) {
             </motion.div>
           ))}
         </div>
+
+        {/* Survey Information */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.8 }}
+          className="text-center max-w-4xl mx-auto"
+        >
+          <div className="bg-gray-50 dark:bg-white/5 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-gray-200 dark:border-white/10 backdrop-blur-sm">
+            <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 light:text-black mb-2">
+              {dict.problem.survey.description}
+            </p>
+            <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-500">
+              {dict.problem.survey.note}
+            </p>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
